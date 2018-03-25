@@ -1,0 +1,12 @@
+[Unit]
+Description=Pi Radio client
+After=network-online.target
+
+[Service]
+Type=simple
+
+ExecStart=/usr/bin/python -u /root/radio.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
