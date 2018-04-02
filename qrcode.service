@@ -1,0 +1,12 @@
+[Unit]
+Description=Pi Radio qrcode scanner
+After=network-online.target
+
+[Service]
+Type=simple
+
+ExecStart=/usr/bin/python -u /root/qrcode.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

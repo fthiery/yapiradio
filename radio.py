@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Copyright 2017, Florent Thiery
-# deps: python mpg123
 
 import time
 import os
@@ -54,13 +53,14 @@ def play():
     playlist_index = playlist_index % len(playlist)
     url = playlist[playlist_index]
     print("Opening playlist item nb %s/%s: %s" % (playlist_index, len(playlist), url))
-    os.system('mpg123 %s' % url)
+    os.system('omxplayer --vol -2000 %s' % url)
+    #os.system('mpg123 %s' % url)
 
 
 def start_radio():
     while True:
         play()
-        print('mpg123 exited, sleeping 1s')
+        print('player exited, sleeping 1s')
         time.sleep(1)
 
 

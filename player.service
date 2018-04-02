@@ -1,0 +1,12 @@
+[Unit]
+Description=Pi Media Player
+After=network-online.target
+
+[Service]
+Type=simple
+
+ExecStart=/usr/bin/python -u /root/player.py
+Restart=never
+
+[Install]
+WantedBy=multi-user.target
